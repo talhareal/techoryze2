@@ -1,0 +1,444 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Code And Video Game Design Courses For Kids And Teens | Tech Rocket</title>
+<link rel="icon" href="{% static 'images/logo/favicon.png' %}" type="images/logo/favicon.png" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/webjs.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</head>
+
+<body>
+<!--START HEADER-->
+<header class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="container">
+<div class="row">
+<div class="col-lg-2 col-md-3 col-sm-4 col-xs-10">
+<img src="{% static 'images/logo/logo.svg' %}" width="174" height="58" class="margin-top6px">
+</div>
+
+<!--START NAVBAR-->
+<nav class="col-lg-10 col-md-9 col-sm-12 col-xs-12 navigation overflowhidden padding-right0px margin-topNav768">
+    <div class="navbar-header col-lg-12 col-xs-12 padding-right0px">
+      <button type="button" class="navbar-toggle margin-right0px" data-toggle="collapse" data-target="#myNavbar">
+       <span class="glyphicon glyphicon-th font-size22px"></span>
+         <!--<span class="icon-bar"></span>
+        <span class="icon-bar"></span> -->
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="bg-colorActive"><a class="transition" href="{% url 'index' %}">Code Courses</a></li>
+        <li><a class="transition" href="{% url 'game-design' %}">Game Design Courses</a></li>
+        <li><a class="transition" href="{% url 'graphic-design' %}">Graphic Design Courses</a></li>
+      </ul>
+   
+
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 floatRight">
+<div class="borderNone button font-size16px floatRight transition">Sign In</div>
+</div>
+
+ </div>
+</nav>
+<!--END NAVBAR-->
+
+</div>
+</div>
+</header>
+<!--END HEADER-->
+
+<!--START BANNER-->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-lightGray">
+<div class="container">
+<div class="row">
+<div class="font-size16px paragraph2 col-lg-7 col-md-8 col-sm-10 col-xs-12">
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-7 screen670">
+<img src="{% static 'images/icon/terminal.svg' %}" width="142" height="142" class="">
+</div>
+<div class="col-lg-9 col-md-7 col-sm-8 padding0px margin-top20px">
+<h4 class="margin-bottom0px font-size14px">Path 1 / 3</h4>
+<h1 class="colorDarkGray font-familyRobotoSlabRegular margin-0px">Code</h1>
+<p>Learn programming with courses on Java, C++, Python &amp; iOS. </p>
+</div>
+
+</div>
+<!--<a href="#" class="slider-prev">
+<i class="iconArrowPrev fa fa-chevron-left"></i>
+</a>-->
+
+<a href="{% url 'game-design' %}" class="slider-next">
+<i class="iconArrow fa fa-chevron-right"></i>
+<!--<span class="h4">Game Design</span>-->
+</a>
+<!--<nav class="innerMenuTab">
+<ul class="has-path-tab">
+<li class="path-tab path-tab--mobile">
+<a class="path-tab-link" href="javascript:">Filter Courses</a>
+</li>
+<li class="transition menuTabActive">
+<a class="" href="#">View All</a>
+</li>
+<li class="transition">
+<a class="" href="#">Python</a>
+</li>
+<li class="transition">
+<a class="" href="#">Java</a>
+</li>
+<li class="transition">
+<a class="" href="#">iOS</a>
+</li>
+<li class="transition">
+<a class="" href="#">C++</a>
+</li>
+<li class="transition">
+<a class="" href="#">Web Design</a>
+</li>
+<li class="transition">
+<a class="" href="#">Hour of Code™ on Tech Rocket</a>
+</li>
+</ul>
+</nav>-->
+
+
+
+<div id="accordion" role="tablist">
+  <div class="card">
+    <div class="card-header menuTabBtn" role="tab" id="headingTwo">
+      <h5 class="mb-0 margin-0px">
+        <a class="displayblock padding10px" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" onClick="chngeMenuIcon()">
+          Filter Courses<i id="chngeicon" class="fa fa-caret-down margin-left10px"></i>
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse in" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion" aria-expanded="true" style="">
+      <div class="card-body">
+       <nav class="innerMenuTab">
+        <ul class="has-path-tab">
+        <li class="transition menuTabActive">
+        <a class="" href="{% url 'index' %}">View All</a>
+        </li>
+        <li class="transition">
+        <a class="" href="{% url 'codeCourses/python' %}">Python</a>
+        </li>
+        <li class="transition">
+        <a class="" href="{% url 'codeCourses/java' %}">Java</a>
+        </li>
+        <li class="transition">
+        <a class="" href="{% url 'codeCourses/ios' %}">iOS</a>
+        </li>
+        <li class="transition">
+        <a class="" href="{% url 'codeCourses/Cplus' %}">C++</a>
+        </li>
+        <li class="transition">
+        <a class="" href="{% url 'codeCourses/webDesign' %}">Web Design</a>
+        </li>
+        <li class="transition">
+        <a class="" href="{% url 'codeCourses/hourOfCode' %}">Hour of Code™ on Tech Rocket</a>
+        </li>
+        </ul>
+      </nav>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+</div>
+</div>
+<!---END BANNER--->
+
+<!--START article-->
+<article class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="container">
+<div class="font-size16px paragraph1 col-lg-7 col-md-8 col-sm-10 col-xs-12">Learning programming can be intimidating, but not here! Our online coding courses cover the most popular programming languages. Use your newfound programming skills to make apps, games, and program gadgets.</div>
+</div>
+</article>
+<!---END article--->
+
+<!--START SECTION-->
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-secImg padding-bioArtic overflowhidden">
+<div class="container">
+<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 margin-auto floatnone">
+<!-----------Cource 1------------>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<h3 class="bg-darkGray colorWhite padding-hedngtab broderRadiusHedngTab margin-0px font-familyRobotoSlabRegular">Python</h3>
+<aside class="bg-white padding-2020px broderRadiuscontentTab overflowhidden freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Python-1.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Python and the Curse of the Unusually High Waves</h5>
+<p class="course-description displayflex">
+New to programming? Not quite sure what’s going on? This free Python course has you covered. Python simplifies coding so that even new users can understand it. Start by getting set up in the environment and going through the basics. Finish by tackling even more Python programming with variables and user input.</p>
+<a href="{% url 'codeCoursesPythonVideos/python-and-the-curse-of-the-unusually-high-waves' %}"><div class="buttons">Start New Course</div></a>
+</aside>
+
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Python_Thumb_2_00000.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Python and the Crystal Skull: Learning Conditions</h5>
+<p class="course-description displayflex">
+Now that you've created a program in Python, it's time to test your skills with the mysterious Crystal Skull! Harness it’s power to talk to passing ships—using conditional statements! You’ll learn to bend if/else statements and loops to your will. Then, wrangle lists to create a container for your messages. It’s just another day on the high seas.</p>
+<a href="{% url 'codeCoursesPythonVideos/python-and-the-crystal-skull-learning-conditions' %}"><div class="buttons">Start New Course</div></a>
+</aside>
+
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/python3.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Function Creation in Python</h5>
+<p class="course-description displayflex">
+You’ve climbed the Python mountain, and there’s one course remaining before you reach the peak. You are going to need methods – self-contained and reusable sections of code that perform specific actions. Methods make writing complicated programs a breeze!</p>
+<a href="{% url 'codeCoursesPythonVideos/functionCreation' %}"><div class="buttons">Start New Course</div></a>
+</aside>
+
+</div>
+
+
+<!-----------Cource 2------------>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px margin-top40px">
+<h3 class="bg-darkGray colorWhite padding-hedngtab broderRadiusHedngTab margin-0px font-familyRobotoSlabRegular">Java</h3>
+<aside class="bg-white padding-2020px broderRadiuscontentTab overflowhidden freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Thumbnail_V11-01.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Java Basics</h5>
+<p class="course-description displayflex">
+When people think of programming, chances are they’re thinking about Java. And it looks like you are too! From your very first program to standard programming structures, you will learn the basics of Java programming in this course. Use the knowledge gained from this course to create programs of your own. Learn to code in your browser, no installation needed!</p>
+<a href="codeCoursesPythonVideos/javaVideoPg/java-basics.html"><div class="buttons">Start New Course</div></a>
+</aside>
+
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/java2.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Object-Oriented Programming</h5>
+<p class="course-description displayflex">
+Now that you’ve breezed through the basics, it is time to talk about arrays and classes, as well as some of the other more in-depth topics that let you code with objects! These awesome programming structures help you simplify your code, using fewer commands to get exactly what you need! Once you get the hang of these, you will be well on your way to becoming a Java wizard.</p>
+<a href="codeCoursesPythonVideos/javaVideoPg/object-oriented-programming.html"><div class="buttons">Start New Course</div></a>
+</aside>
+
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/java3.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Advanced Java Concepts</h5>
+<p class="course-description displayflex">
+Have you mastered Java? Want to test your skills and take them further? Or can you use some help? We’ve got you covered! We’ll take an in-depth look at the core topics in Java, some of which are covered on the AP Computer Science Exam. Conquer this course, and you’ll be able to tackle Java with supreme confidence!</p>
+<a href="codeCoursesPythonVideos/javaVideoPg/advanced-java-concepts.html"><div class="buttons">Start New Course</div></a>
+</aside>
+
+</div>
+
+<!-----------Cource 3------------>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px margin-top40px">
+<h3 class="bg-darkGray colorWhite padding-hedngtab broderRadiusHedngTab margin-0px font-familyRobotoSlabRegular">iOS</h3>
+<aside class="bg-white padding-2020px broderRadiuscontentTab overflowhidden">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/2016-02-01.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Swift Wildfire: Business As Usual</h5>
+<p class="course-description displayflex">
+Swift Wildfire: Business as Usual is an exciting introductory course into the world of iOS app building using Apple’s new programming language, Swift, and developing application Xcode. This course provides an in depth, hands-on approach for the iOS beginner. Students are taken into an engaging action story (Wildfire) where students build two functional mobile apps. Welcome to Swift Wildfire!</p>
+<a href="codeCoursesPythonVideos/iOSVideoPg/swift-wildfire-business-as-usual.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+
+<!-----------Cource 4------------>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px margin-top40px">
+<h3 class="bg-darkGray colorWhite padding-hedngtab broderRadiusHedngTab margin-0px font-familyRobotoSlabRegular">C++</h3>
+<aside class="bg-white padding-2020px broderRadiuscontentTab overflowhidden">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Cplusplus1.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Getting Started with C++</h5>
+<p class="course-description displayflex">
+Want to talk to robots? C++ will help you communicate with machines. This snazzy object-oriented programming language is perfect for everything from desktop applications to systems design to video games. You can literally tell the computer exactly what you want it to do. Learn the basics of C++ and bend this language to your will!</p>
+<a href="codeCoursesPythonVideos/CplusVideoPg/getting-started-with-c.html"><div class="buttons">Start New Course</div></a>
+</aside>
+
+
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Cplusplus2.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Conditional Statements in C++</h5>
+<p class="course-description displayflex">
+What happens if the robots talk back? What happens if they don’t? Be ready for all possibilities by mastering conditional statements. With conditionals, tell your programs when to run and when not to. After this course, you will be coding like a pro, looping and checking conditions with real mastery!</p>
+<a href="codeCoursesPythonVideos/CplusVideoPg/conditional-statements-in-c.html"><div class="buttons">Start New Course</div></a>
+</aside>
+
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/cplusplus3.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Creating Functions in C++</h5>
+<p class="course-description displayflex">
+Want to further your communication with technology? Functions make your code fly, count, run, or anything else that you can think of. You have used a few already and may not have even realized it, and now it’s time for functions to steal the spotlight! Create awesome C++ programs and code with the best of them. Throw those functions into your code and you’ll discover just how much you can do!</p>
+<a href="codeCoursesPythonVideos/CplusVideoPg/creating-functions-in-c.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<!-----------Cource 5------------>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px margin-top40px">
+<h3 class="bg-darkGray colorWhite padding-hedngtab broderRadiusHedngTab margin-0px font-familyRobotoSlabRegular">Web Design</h3>
+<aside class="bg-white padding-2020px broderRadiuscontentTab overflowhidden">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/html5.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Web Development with HTML and CSS</h5>
+<p class="course-description displayflex">
+In this HTML Basics course you will build a Tech Rocket profile page for our Tech Genius Alex! We will learn about the internet and how we can use HTML and CSS to build an awesome web page, all while using our HTML Builder.</p>
+<a href="codeCoursesPythonVideos/webDesignVideoPg/web-development-with-html-and-css.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<!-----------Cource 6------------>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px margin-top40px">
+<h3 class="bg-darkGray colorWhite padding-hedngtab broderRadiusHedngTab margin-0px font-familyRobotoSlabRegular">Hour of CodeTM on Tech Rocket</h3>
+<aside class="bg-white padding-2020px broderRadiuscontentTab overflowhidden freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Thumbnail_FINAL-01.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Ruby Basics</h5>
+<p class="course-description displayflex">
+Claire the Cat needs your help to prepare for her first book reading! In this free Hour of Code™ course, you’ll build a program using Ruby and help Claire fill in the missing parts of her story. Free, fun and under an hour long! Purrfect!</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/ruby-basics.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Java_thumb_1.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Tales from the JavaScript 1</h5>
+<p class="course-description displayflex">
+You’re stuck in a spooky room with a ghost lurking about. Want to escape this madness? You’ll learn JavaScript Math and Variables, then use your new-found skills to print out the combination that let’s you escape this haunted house safely!</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/tales-from-the-javascript-1.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/Java_thumb_2.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Tales from the JavaScript 2</h5>
+<p class="course-description displayflex">
+Now you’re trying to communicate with the spirits of the beyond. But you'll be using JavaScript programming, not phone calls or texts! Learn JavaScript operators and If/Else Statements, and then use this knowledge to call forth spirits of the unknown. Just don’t dial the wrong ghost.</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/tales-from-the-javascript-2.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/JAVA3 (1).png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Tales from the JavaScript 3</h5>
+<p class="course-description displayflex">
+It's not over yet as this time you've been challenged to a dance-off. Your moves will be programmed through JavaScript functions! Learn and then create JavaScript functions, and you’ll bust some amazing moves and dance your way to victory.</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/tales-from-the-javascript-3.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/BLIS_thumbnail1.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Bad Luck in Space with Python 1</h5>
+<p class="course-description displayflex">
+In this adventure, you’re lost in space and stuck in a different dimension. Oh no! Learn the basics of Python programming including printing messages and use your handy-dandy skills in order to contact mission control. Get started!</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/bad-luck-in-space-with-python-1.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/BLIS_thumbnail2.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Bad Luck in Space with Python 2</h5>
+<p class="course-description displayflex">
+You've safely arrived at another Python coding adventure - but this time, your engine is giving you problems. Learn how to use Python’s variables and operators and program that engine to start rolling again. Let’s go!</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/bad-luck-in-space-with-python-2.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding0px">
+<aside class="bg-white padding-2020px border-radius0poin5em margin-top40px overflowhidden vertLine freetab">
+<div class="width-90px height-90px floatleft margin-right20px"><img src="{% static 'images/icon/BLIS_thumbnail_3.png' %}" class="width-100per border-radius10px"></div>
+<h5 class="colorgray font-size125per displayflex margin-top0px">Bad Luck in Space with Python 3</h5>
+<p class="course-description displayflex">
+The last stage is where heroes are made, and it’s no different in this Python coding adventure. In this episode, aliens are trying to attack the space station! How do you fight back? You check your Python programming armor of lists and if/else statements to figure out how to approach this sticky situation. Put your cape on and start your journey to save the spaceship, the space station, and the cats!</p>
+<a href="codeCoursesPythonVideos/hour-of-codeVideoPg/bad-luck-in-space-with-python-3.html"><div class="buttons">Start New Course</div></a>
+</aside>
+</div>
+
+</div>
+</div>
+</section>
+<!--END SECTION-->
+
+
+<!--START FOOTER-->
+<footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-colorFooter padding-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 overflowhidden floatnone">
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+<img src="{% static 'images/logo/logo.svg' %}" width="135" height="45">
+<p class="colorWhite">We are an online learning destination where kids and teens learn code, game design, and graphic design.</p>
+<ul class="padding0px socialicon">
+<li>FOLLOW US</li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-youtube-play font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-facebook font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-twitter font-size14px"></span></a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 border-leftfotCont padding0px navFotul">
+<ul>
+<li><a href="#">Browse Courses</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Instructors</a></li>
+<li><a href="#">Enroll</a></li>
+<li><a href="#">Sign In</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 border-leftfotCont padding0px navFotul">
+<ul>
+<li><a href="#">Arcade</a></li>
+<li><a target="_blank" href="#">Forums</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">FAQ</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 border-leftfotCont paddingFotTxt768">
+<h5 class="fotTxt margin-0px">ADDRESS</h5>
+<p class="colorWhite margin-0px">910 E. Hamilton Ave, Ste. 300 Campbell, CA 95008</p>
+
+<h5 class="fotTxt margin-0px">CONTACT</h5>
+<p class="colorWhite margin-0px">Mon–Fri, 8am–3pm Pacific<br> 1-844-662-RCKT (7258)<br> 1-408-637-2400 (International)</p>
+<a class="fottxtlink" href="#">info@techrocket.com</a>
+
+<h5 class="fotTxt margin-0px margin-top20px">SCHOOL & GROUP SALES</h5>
+<a class="fottxtlink" href="#">sales@techrocket.com</a>
+</div>
+
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 overflowhidden fotTxtColor2 font-size13px floatnone margin-auto margin-top20px">
+<p>The Hour of Code™ is a nationwide initiative by Computer Science Education Week and Code.org to introduce millions of students to one hour of computer science and computer programming.</p>
+<p>TECH ROCKET COURSES ARE NOT OFFICIAL MINECRAFT® PRODUCTS. 
+THEY ARE NOT APPROVED BY, OR ASSOCIATED WITH MOJANG®.</p>
+<p>© Tech Rocket / internalDrive, Inc. All Rights Reserved. 
+All trademarks are the properties of their respective owners.</p> 
+</div>
+
+</div>
+</div>
+</footer>
+<!--END FOOTER-->
+
+<!-- Chat Box -->
+<style>
+.cheatBox
+{
+ position: fixed;
+ bottom: 0;
+ right: 50px;
+ background: #fff;
+}
+</style>
+<script>
+function cheatOpen()
+{
+ if(document.getElementById('cheatBoxCont').style.display!="block")
+ document.getElementById('cheatBoxCont').style.display="block";
+ else
+ document.getElementById('cheatBoxCont').style.display="none";
+}
+</script>
+<div class="cheatBox col-lg-2 col-md-2 col-sm-3 col-xs-3 padding0px">
+<div class="bg-info padding-2020px" onClick="cheatOpen()">Cheater Box</div>
+<div id="cheatBoxCont" class="bg-colorBlack padding-2020px" style="display:none;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+import os
+
+AWS_QUERYSTRING_AUTH = False
+AWS_ACCESS_KEY_ID = 'AKIAJWBMLHZDFOX7IQKQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'techoryze'
+MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"

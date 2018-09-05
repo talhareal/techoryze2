@@ -1,0 +1,179 @@
+{% load define_action %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>.::Techoryze Blog::. </title>
+<link rel="icon" href="http://54.197.43.10/static/images/logo/favicon.png" type="images/logo/favicon.png" />
+<link href="http://54.197.43.10/static/css/style.css" rel="stylesheet" type="text/css">
+<script src="http://54.197.43.10/static/js/jquery.js"></script>
+<script src="http://54.197.43.10/static/js/webjs.js"></script>
+
+</head>
+
+<body>
+<!--START HEADER-->
+<header class="bg-header pt-4 pb-4">
+<div class="container">
+<div class="row">
+<div class="col">
+<!--START NAVBAR-->
+<nav class="col navbar navbar-expand-lg navbar-light d-block font-size14px p-0">
+  <div class="col-lg-2 col-md-3 col-sm-4 col-7 p-0 pull-left mt-1">
+<a href="/" class="d-block"><img src="http://54.197.43.10/static/images/logo/logo.png" width="130" class=""></a>
+</div>
+<div class="col-lg-10 col-md-12 col-sm-12 col-12 p-0 pull-left">
+  <button class="navbar-toggler btn btn-dark pull-right margin-topNeg31px collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="col navbar-collapse pull-left p-0 collapse" id="navbarText" style="">
+    <ul class="navbar-nav colorWhite">
+      <li class="nav-item">
+        <a class="nav-link transition" href="/">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link transition" href="AboutUs">About Us</a>
+      </li>
+    </ul>
+    		<div class="col p-0">
+            {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a href="logout" class="d-block pull-right btn btn-dark signBtn font-weight-bold col-lg-3 col-md-12 col-sm-12 col-12">Sign Out</a>
+            {% else %}
+        	    <a href="logins" class="d-block pull-right btn btn-dark signBtn font-weight-bold col-lg-3 col-md-12 col-sm-12 col-12">Sign In</a>
+            {% endif %}
+        </div>
+  </div>
+  </div>
+</nav>
+<!--END NAVBAR-->
+</div>
+</div>
+</div>
+</header>
+<!--END HEADER-->
+
+<!--START BANNER-->
+<article class="overflow-hidden">
+<div class="container">
+<div class="col bg-banner mt-4 p-5 height-400px">
+<h1 class="font-familyPoiretOneRegular colorOrange font-weight-bold">Launch a learning <br> Adventure</h1>
+</div>
+</div>
+</article>
+<!--END BANNER-->
+
+<!--START SECTION-->
+<section class="overflow-hidden">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h3 class="font-familyRaleway colorgray text-center p-4 m-0">Blog</h3>
+
+<div class="col-12 border-top1px p-0 font-familyRobotoRegular colorgray overflow-hidden">
+
+
+
+
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+</section>
+<!--END SECTION-->
+
+<!--START FOOTER-->
+<footer class="overflow-hidden">
+<div class="container">
+<div class="col border-top1px mt-5">
+<div class="col-lg-3 col-md-6 col-sm-12 col-12 pl-0 pull-left mt-4">
+<a href="/"><img src="http://54.197.43.10/static/images/logo/logo.png" width="135" class=""></a>
+<p class="pt-2">Lorem Ipsum is simply dummy text of the
+printing and typesetting industry. Lorem
+Ipsum has been the industry's standard
+dummy text.</p>
+<ul class="p-0 socialicon">
+<li class="font-weight-bold">FOLLOW US</li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-youtube-play font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-facebook font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-twitter font-size14px"></span></a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-6 col-12 navFotul pull-left mt-4 height-191px padding0768scr">
+<ul>
+<li><a href="/" class="transition">Browse Courses</a></li>
+<li><a href="Instructor" class="transition">Instructors</a></li>
+{% comment %}<li><a href="#" class="transition">Enroll</a></li>{% endcomment %}
+<li>
+    {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a href="logout" class="transition">Sign Out</a>
+            {% else %}
+        	<a href="logins" class="transition">Sign In</a>
+            {% endif %}</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12 navFotul pull-left mt-4 height-191px padding0978scr">
+<ul>
+{% comment %}<li><a href="#" class="transition">Arcade</a></li>
+<li><a href="#" class="transition">Forums</a></li>{% endcomment %}
+<li><a href="Blogs" class="transition">Blog</a></li>
+<li><a href="PrivacyPolicy" class="transition">Privacy Policy</a></li>
+{% comment %}<li><a href="#" class="transition">FAQ</a></li>{% endcomment %}
+<li><a href="ContactUs" class="transition">Contact</a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-12 col-12 pull-left mt-4 padding0768scr">
+{% comment %}<p class="m-0 font-weight-bold">Address</p>
+<p class="m-0">Lorem Ipsum is simply dummy text</p>{% endcomment %}
+
+<p class="m-0 font-weight-bold mt-2">Contact</p>
+{% comment %}<p class="m-0">Lorem Ipsum is simply dummy text</p>
+<p class="m-0">Lorem Ipsum is simply dummy text</p>{% endcomment %}
+
+<p class="mt-2 font-weight-bold"><a href="mailto:info@techoryze.com" class="transition txtlink">info@techoryze.com</a></p>
+
+<p class="m-0 font-weight-bold">School &amp; Group Sales</p>
+<p class="mt-2 font-weight-bold"><a href="mailto:sales@techoryze.com" class="transition txtlink">sales@techoryze.com</a></p>
+</div>
+</div>
+
+<div class="col-12 pull-left border-top1px mt-4">
+<p class="text-center mt-3">2018 © Techoryze. All Rights Reserved</p>
+</div>
+
+</div>
+</footer>
+<!--END FOOTER-->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://54.197.43.10/static/js/slim.min.js"></script>
+<script src="http://54.197.43.10/static/js/popper.min.js"></script>
+<script src="http://54.197.43.10/static/js/bootstrap.js"></script>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="http://54.197.43.10/static/js/chatscript.js"></script>
+<script src="http://54.197.43.10/static/js/slim.min.js"></script>
+<script src="http://54.197.43.10/static/js/popper.min.js"></script>
+<script src="http://54.197.43.10/static/js/bootstrap.js"></script>
+<script src="http://54.197.43.10/static/js/js.cookie.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+     {% define username as user %}
+    {% if user == '' %}
+        {% define 'admin' as user %}
+    {% endif %}
+</script>
+</body>
+</html>

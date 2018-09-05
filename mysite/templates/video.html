@@ -1,0 +1,513 @@
+{% load define_action %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<<<<<<< HEAD
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+<meta name="viewport" content="width=device-width, initial-scale=1">
+>>>>>>> c941cdec99f56e15f79f3e64f7f7c71673ff1a5a
+<title>.::Techoryze | Videos::.</title>
+<link rel="icon" href="http://54.197.43.10/static/images/logo/favicon.png" type="images/logo/favicon.png" />
+<link href="http://54.197.43.10/static/css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" href="http://54.197.43.10/static/css/chatstyle.css">
+<<<<<<< HEAD
+
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<script src="http://54.197.43.10/static/js/jquery.js"></script>
+<script src="http://54.197.43.10/static/js/webjs.js"></script>
+    <script src="http://54.197.43.10/static/js/js.cookie.js"></script>
+=======
+<script src="http://54.197.43.10/static/js/jquery.js"></script>
+<script src="http://54.197.43.10/static/js/webjs.js"></script>
+    <script src="http://54.197.43.10/static/js/js.cookie.js"></script>
+    <script src="http://54.197.43.10/static/js/ac_quicktime.js"></script>
+>>>>>>> c941cdec99f56e15f79f3e64f7f7c71673ff1a5a
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="http://54.197.43.10/static/js/ac_quicktime.js"></script>
+
+</head>
+
+<body>
+<!--START HEADER-->
+<header class="bg-header pt-4 pb-4">
+<div class="container">
+<div class="row">
+<div class="col">
+<!--START NAVBAR-->
+<nav class="col navbar navbar-expand-lg navbar-light d-block font-size14px p-0">
+  <div class="col-lg-2 col-md-3 col-sm-4 col-7 p-0 pull-left mt-1">
+<a href="/" class="d-block"><img src="http://54.197.43.10/static/images/logo/logo.png" width="130" class=""></a>
+</div>
+<div class="col-lg-10 col-md-12 col-sm-12 col-12 p-0 pull-left">
+  <button class="navbar-toggler btn btn-dark pull-right margin-topNeg31px collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="col navbar-collapse pull-left p-0 collapse" id="navbarText" style="">
+    <ul class="navbar-nav colorWhite">
+        <li class="nav-item">
+        <a class="nav-link transition" href="/">Categories</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link transition" href="#">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link transition" href="/AboutUs">About Us</a>
+      </li>
+    </ul>
+        <div class="col p-0">
+            {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a href="\logout" class="d-block pull-right btn btn-dark signBtn font-weight-bold col-lg-3 col-md-12 col-sm-12 col-12">Sign Out</a>
+            {% else %}
+        	<a href="logins" class="d-block pull-right btn btn-dark signBtn font-weight-bold col-lg-3 col-md-12 col-sm-12 col-12">Sign In</a>
+            {% endif %}
+        </div>
+  </div>
+  </div>
+</nav>
+<!--END NAVBAR-->
+</div>
+</div>
+</div>
+</header>
+<!--END HEADER-->
+
+<!--START SECTION-->
+<section class="overflow-hidden font-familyRobotoRegular">
+<div class="container">
+<div class="row">
+<div class="col-12">
+    {% for course in courses %}
+        {% if course.course_category == 'MOS' %}
+              {% define  '\Microsoft_Office_Suite'|addstr:"/courses" as url %}
+            <p class="font-size12px mt-4 m-0 pl-3"> <a href="{{ url }}">Microsoft Office Suite > </a> <span class=""> {{ course.course_title }}</span></p>
+        {% endif %}
+
+        {% if course.course_category == 'GD' %}
+            {% define  '\Graphic_Design'|addstr:"/courses" as url %}
+            <p class="font-size12px mt-4 m-0 pl-3"><a href="{{ url }}">Graphic Design > </a>  <span class=""> {{ course.course_title }}</span> </p>
+        {% endif %}
+
+        {% if course.course_category == 'SM' %}
+            {% define  '\Sound_Music'|addstr:"/courses" as url %}
+            <p class="font-size12px mt-4 m-0 pl-3"><a href="{{ url }}">Sound & Music > </a>  <span class=""> {{ course.course_title }}</span> </p>
+        {% endif %}
+
+        {% if course.course_category == 'WD' %}
+            {% define  '\Web_Site_Development'|addstr:"/courses" as url %}
+            <p class="font-size12px mt-4 m-0 pl-3"><a href="{{ url }}">WEB SITE DEVELOPMENT > </a>  <span class=""> {{ course.course_title }}</span> </p>
+        {% endif %}
+
+        {% if course.course_category == 'AP' %}
+            {% define  '\Animation_Production'|addstr:"/courses" as url %}
+            <p class="font-size12px mt-4 m-0 pl-3"><a href="{{ url }}">Animation Production > </a>  <span class=""> {{ course.course_title }}</span> </p>
+        {% endif %}
+
+        {% if course.course_category == 'VE' %}
+            {% define  '\Video_Editing'|addstr:"/courses" as url %}
+            <p class="font-size12px mt-4 m-0 pl-3"><a href="{{ url }}">Video Editing > </a>  <span class=""> {{ course.course_title }}</span></p>
+        {% endif %}
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <ul class="videoHedings p-0 m-0 mt-4 mb-4">
+        <li class="colorgray"><h4 class="m-0">{{ course.course_title }}</h4></li>
+        </ul>
+        </div>
+
+        <div class="col-12 border-top1px font-size12px pt-2 pb-2 overflow-hidden">
+        <p class="pull-left m-0"><b>by {{ course.course_author_name }}</b> {{ course.course_date }}</p>
+        <p class="pull-right m-0">Lessons: <b>{{ course.number_of_lesson }}</b> Duration: <b>{{ course.course_duration }}</b></p>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 border-top1px p-0 overflow-hidden">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12 pull-left mt-5">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-0">
+
+<<<<<<< HEAD
+
+		<!--<video controls class="col p-0"  poster="https://techoryze.herokuapp.com/static/images/bg/poster.png" id="videoPlayer" controls="controls">
+            <source src="http://54.197.43.10/media/{{ course.course_video }}" type="video/mp4">
+        </video>-->
+		
+		<iframe class="col p-0" style="height: 400px;"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>
+		
+		<!--<iframe width="420" height="315" src="http://54.197.43.10/media/{{ course.course_video }}" frameborder="0" allowfullscreen>
+  </iframe>-->
+		
+<!--<video id="movie" class="col p-0" preload controls>
+  <source src="http://54.197.43.10/media/video/cds_1nTIdN6.webm" type="video/webm; codecs=vp8,vorbis" />
+  <source src="http://54.197.43.10/media/video/cds_1nTIdN6.ogg" type="video/ogg; codecs=theora,vorbis" />
+  <source src="http://54.197.43.10/media/video/cds_1nTIdN6.mp4" />
+  <object width="320" height="240" type="application/x-shockwave-flash"
+    data="flowplayer-3.2.1.swf">
+    <param name="movie" value="flowplayer-3.2.1.swf" />
+    <param name="allowfullscreen" value="true" />
+    <param name="flashvars" value="config={'clip': {'url': 'http://54.197.43.10/media/video/cds_1nTIdN6.mp4', 'autoPlay':false, 'autoBuffering':true}}" />
+  </object>
+</video>-->
+
+<script>
+    var videoPlayer = document.getElementById('videoPlayer');
+
+    // Auto play, half volume.
+    videoPlayer.play()
+    videoPlayer.volume = 0.5;
+
+    // Play / pause.
+    videoPlayer.addEventListener('click', function () {
+        if (videoPlayer.paused == false) {
+            videoPlayer.pause();
+            videoPlayer.firstChild.nodeValue = 'Play';
+        } else {
+            videoPlayer.play();
+            videoPlayer.firstChild.nodeValue = 'Pause';
+        }
+    });
+</script>
+
+<!--<script>
+  var v = document.getElementById("movie");
+  v.onclick = function() {
+    if (v.paused) {
+      v.play();
+    } else {
+      v.pause();
+    }
+  };
+</script>    -->
+	
+=======
+            <script language="javascript">
+        QT_WriteOBJECT('/media/{{ course.course_video }}' , '100%', '400' , '' ,  'AUTOPLAY', 'False', 'SCALE', 'Aspect');
+        </script>
+       {% comment %} <h2>{{ MEDIA_URL }} --------------------------------------{{ course.course_video }}</h2>
+        <video id="video" controls="true" class="col p-0"  poster="http://54.197.43.10/static/images/bg/poster.png" preload="auto">
+            <source src="/media/{{ course.course_video }}" type="video/mp4" >
+        </video>{% endcomment %}
+		{% comment %}<h1>Testing video</h1>
+		<video width="400" controls>
+		<source src="http://ec2-54-84-36-230.compute-1.amazonaws.com/mov_bbb.mp4" type="video/mp4">
+		<source src="http://ec2-54-84-36-230.compute-1.amazonaws.com/mov_bbb.mp4" type="video/ogg">
+		Your browser does not support HTML5 video.
+		</video>{% endcomment %}
+>>>>>>> c941cdec99f56e15f79f3e64f7f7c71673ff1a5a
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 pull-left mt-5">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 border-dashed1px text-center padding-topBot">
+        <h5 class="colorgray">{{ course.course_title }}</h5>
+        <p class="font-size13px pt-5">Lessons: 12<br>Duration: {{ course.course_duration }}</p>
+        <div class="col p-0 mt-5">
+            <a href="http://54.197.43.10/{{ course.id }}/video/course_series" class="d-block btn btn-dark colorOrange col-lg-6 col-md-8 col-sm-8 col-12 m-auto font-size14px">Start Course</a>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+        <div class="col-12 border-top1px font-size12px pt-3 pb-2 mt-5 overflow-hidden">
+        <h5 class="colorgray">Course Details</h5>
+        <p class="m-0">{{ course.course_detail }}</p>
+        </div>
+
+        <div class="col-12 border-top1px font-size12px pt-3 pb-2 mt-3 overflow-hidden">
+        <h5 class="colorgray">Course Outline</h5>
+        <p class="m-0">{{ course.course_outline }}</p>
+        </div>
+
+        <div class="col-12 border-top1px font-size12px pt-3 pb-2 mt-3 overflow-hidden">
+        <h5 class="colorgray">What You’ll Learn</h5>
+        </div>
+
+        <div class="col-12 border-top1px font-size12px pt-3 pb-2 mt-3 overflow-hidden">
+        <h5 class="colorgray">Course Prerequisites</h5>
+        <ul class="pl-3 line-height25px bullits">
+        <li>Platform: Windows or Mac</li>
+        <li>Software: No software needed!</li>
+        <li>Required Skills: N/A</li>
+        <li>Previous Courses: N/A</li>
+        </ul>
+        </div>
+
+
+        <div class="col-12 border-top1px font-size12px pt-3 pb-2 overflow-hidden">
+        <h5 class="colorgray mb-3">Your Instructor</h5>
+        <img src="http://54.197.43.10/media/{{ course.course_author_image }}" class="pull-left mt-3 mr-3" width="100">
+        <h5 class="colorGreen">{{ course.course_author_name }}</h5>
+        <p>MOS Course Editor | Techoryze</p>
+        <p class="col-lg-6 col-md-6 col-sm-12 col-12">{{ course.instructor_detail }}</p>
+        </div>
+
+
+
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+
+</section>
+<!--END SECTION-->
+
+<!--START FOOTER-->
+<footer class="overflow-hidden">
+<div class="container">
+<div class="col border-top1px mt-3">
+<div class="col-lg-3 col-md-6 col-sm-12 col-12 pl-0 pull-left mt-4">
+<a href="/"><img src="http://54.197.43.10/static/images/logo/logo.png" width="135" class=""></a>
+<p class="pt-2">Lorem Ipsum is simply dummy text of the
+printing and typesetting industry. Lorem
+Ipsum has been the industry's standard
+dummy text.</p>
+<ul class="p-0 socialicon">
+<li class="font-weight-bold">FOLLOW US</li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-youtube-play font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-facebook font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-twitter font-size14px"></span></a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-6 col-12 navFotul pull-left mt-4 height-191px padding0768scr">
+<ul>
+<li><a href="/" class="transition">Browse Courses</a></li>
+<li><a href="/Instructor" class="transition">Instructors</a></li>
+{% comment %}<li><a href="#" class="transition">Enroll</a></li>{% endcomment %}
+<li>
+    {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a href="/logout" class="transition">Sign Out</a>
+            {% else %}
+        	<a href="/logins" class="transition">Sign In</a>
+            {% endif %}</li>
+</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12 navFotul pull-left mt-4 height-191px padding0978scr">
+<ul>
+{% comment %}<li><a href="#" class="transition">Arcade</a></li>
+<li><a href="#" class="transition">Forums</a></li>{% endcomment %}
+<li><a href="/Blogs" class="transition">Blog</a></li>
+<li><a href="/PrivacyPolicy" class="transition">Privacy Policy</a></li>
+{% comment %}<li><a href="#" class="transition">FAQ</a></li>{% endcomment %}
+<li><a href="/ContactUs" class="transition">Contact</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-12 col-12 pull-left mt-4 padding0768scr">
+{% comment %}<p class="m-0 font-weight-bold">Address</p>
+<p class="m-0">Lorem Ipsum is simply dummy text</p>{% endcomment %}
+
+<p class="m-0 font-weight-bold mt-2">Contact</p>
+{% comment %}<p class="m-0">Lorem Ipsum is simply dummy text</p>
+<p class="m-0">Lorem Ipsum is simply dummy text</p>{% endcomment %}
+
+<p class="mt-2 font-weight-bold"><a href="mailto:info@techoryze.com" class="transition txtlink">info@techoryze.com</a></p>
+
+<p class="m-0 font-weight-bold">School &amp; Group Sales</p>
+<p class="mt-2 font-weight-bold"><a href="mailto:sales@techoryze.com" class="transition txtlink">sales@techoryze.com</a></p>
+</div>
+</div>
+
+<div class="col-12 pull-left border-top1px mt-4">
+<p class="text-center mt-3">2018 © Techoryze. All Rights Reserved</p>
+</div>
+
+</div>
+</footer>
+<!--END FOOTER-->
+
+{% comment %}Chat window start{% endcomment %}
+<div class="col p-0">
+            {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a onclick="dispaychat()" class="d-block chatBtn colorOrange font-weight-bold col-lg-1 col-md-1 col-sm-1 col-1"></a>
+            {% endif %}
+        </div>
+
+<div id="live-chat" style="visibility: hidden">
+
+		<header class="clearfix">
+
+			<a href="javascript:hideChat()" class="chat-close">x</a>
+
+			<h4>John Powers</h4>
+
+			<span id="counter" class="chat-message-counter">0</span>
+
+		</header>
+
+		<div class="chat" id="chat">
+
+            <div class="chat-history js-chat-log"></div>
+
+			{% comment %}<ul class="js-chat-log"></ul>{% endcomment %}
+
+			<div style="padding: 16px">
+
+				<fieldset>
+
+					<input class="js-text" type="text" placeholder="Type your message…" autofocus>
+					<input type="hidden">
+
+				</fieldset>
+            </div>
+
+		</div> <!-- end chat -->
+
+	</div> <!-- end live-chat -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="http://54.197.43.10/static/js/chatscript.js"></script>
+<script src="http://54.197.43.10/static/js/slim.min.js"></script>
+<script src="http://54.197.43.10/static/js/popper.min.js"></script>
+<script src="http://54.197.43.10/static/js/bootstrap.js"></script>
+<script src="http://54.197.43.10/static/js/js.cookie.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+var counter = 0;
+    var me = {};
+me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
+
+var you = {};
+you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
+
+ {% define username as user %}
+    {% if user == '' %}
+        {% define 'admin' as user %}
+    {% endif %}
+
+    //working code
+    var chatterbotUrl = '{% url "chatterbot:chatterbot" %}';
+      var csrftoken = Cookies.get('csrftoken');
+
+      function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+
+      $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          }
+        }
+      });
+
+      var $chatlog = $('.js-chat-log');
+      var $input = $('.js-text');
+      var $sayButton = $('.js-say');
+
+      function createRow(text, who) {
+          var date = formatAMPM(new Date())
+          if(who == "me"){
+              //var $row = $('<li class="list-group-item"></li>');
+              $row = $('<div class="chat-message clearfix">\
+                 <img src="http://54.197.43.10/static/images/icon/user_icon.png" alt="" width="32" height="32">\
+                  <div class="chat-message-content clearfix">\
+                  <h5>{{ user }}</h5>\
+                  <p id="text1">'+text+'</p>\
+                  </div>\
+                  </div>\
+                  <hr>');
+          }
+          else {
+               $row = $('<div class="chat-message clearfix">\
+                  <img src="http://54.197.43.10/static/images/icon/usermalecircle.png" alt="" width="32" height="32">\
+                  <div class="chat-message-content clearfix">\
+                  <h5>John Powers</h5>\
+                  <p id="text1">'+text+'</p>\
+                  </div>\
+                  </div>\
+                  <hr>');
+          }
+          //$row.text(text);
+          //alert(text);
+          //document.getElementById("text1").innerHTML=text;
+          $chatlog.append($row);
+          counter++;
+          document.getElementById("counter").innerHTML = counter;
+      }
+
+      function submitInput() {
+        var inputData = {
+          'text': $input.val()
+        }
+
+        // Display the user's input on the web page
+
+
+        createRow(inputData.text, 'me');
+
+        var $submit = $.ajax({
+          type: 'POST',
+          url: chatterbotUrl,
+          data: JSON.stringify(inputData),
+          contentType: 'application/json'
+        });
+
+        $submit.done(function(statement) {
+            var result = statement.text;
+            createRow(result, 'you');
+
+            // Clear the input field
+            $input.val('');
+
+            // Scroll to the bottom of the chat interface
+            $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+        });
+
+        $submit.fail(function() {
+          // TODO: Handle errors
+        });
+      }
+
+      $sayButton.click(function() {
+        submitInput();
+      });
+
+      $input.keydown(function(event) {
+        // Submit the input when the enter button is pressed
+        if (event.keyCode == 13) {
+          submitInput();
+        }
+      });
+
+
+      function formatAMPM(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+}
+
+function dispaychat() {
+    document.getElementById("live-chat").style.visibility = "visible";
+    document.getElementById("chat").style.display = "block";
+    document.getElementById("counter").style.display = "none";
+
+}
+
+function hideChat() {
+    document.getElementById("live-chat").style.visibility = "hidden";
+}
+
+
+</script>
+</body>
+</html>

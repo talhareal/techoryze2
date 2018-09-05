@@ -1,0 +1,454 @@
+{% load define_action %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>.::Techoryze | Courses::.</title>
+    {% comment %}http://127.0.0.1:8000{% endcomment %}
+<link rel="icon" href="http://54.197.43.10/static/images/logo/favicon.png" type="images/logo/favicon.png" />
+<link href="http://54.197.43.10/static/css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" href="http://54.197.43.10/static/css/chatstyle.css">
+<script src="http://54.197.43.10/static/js/jquery.js"></script>
+<script src="http://54.197.43.10/static/js/webjs.js"></script>
+    <script src="http://54.197.43.10/static/js/js.cookie.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+<!--START HEADER-->
+<header class="bg-header pt-4 pb-4">
+<div class="container">
+<div class="row">
+<div class="col">
+<!--START NAVBAR-->
+<nav class="col navbar navbar-expand-lg navbar-light d-block font-size14px p-0">
+  <div class="col-lg-2 col-md-3 col-sm-4 col-7 p-0 pull-left mt-1">
+<a href="/" class="d-block"><img src="http://54.197.43.10/static/images/logo/logo.png" width="130" class=""></a>
+</div>
+<div class="col-lg-10 col-md-12 col-sm-12 col-12 p-0 pull-left">
+  <button class="navbar-toggler btn btn-dark pull-right margin-topNeg31px collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="col navbar-collapse pull-left p-0 collapse" id="navbarText" style="">
+    <ul class="navbar-nav colorWhite">
+        <li class="nav-item">
+        <a class="nav-link transition" href="/">Categories</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link transition" href="\Productivity/courses">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link transition" href="/AboutUs">About Us</a>
+      </li>
+    </ul>
+    	<div class="col p-0">
+            {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a href="\logout" class="d-block pull-right btn btn-dark signBtn font-weight-bold col-lg-3 col-md-12 col-sm-12 col-12">Sign Out</a>
+            {% else %}
+        	<a href="logins" class="d-block pull-right btn btn-dark signBtn font-weight-bold col-lg-3 col-md-12 col-sm-12 col-12">Sign In</a>
+            {% endif %}
+        </div>
+  </div>
+  </div>
+</nav>
+<!--END NAVBAR-->
+</div>
+</div>
+</div>
+</header>
+<!--END HEADER-->
+
+<!--START SECTION-->
+<section class="overflow-hidden">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+<ul class="courseHedings p-0 m-0 mt-4">
+    {% for course in courses %}
+        {% define forloop.counter as count %}
+        {% if forloop.first %}
+
+            {% if course.course_category == 'MOS' %}
+
+                <li class="colorBlue font-familyRobotoRegular cours1"><h4 class="">PRODUCTIVITY</h4>
+                <span id="count{{ course.course_category }}" class="coursecount">
+
+                </span>
+                </li>
+
+            {% endif %}
+
+            {% if course.course_category == 'GD' %}
+
+                <li class="colorGreen font-familyRobotoRegular cours2"><h4 class="">CREATIVE DESIGN</h4>
+                 <span id="count{{ course.course_category }}" class="coursecount">
+
+                </span>
+
+                </li>
+
+            {% endif %}
+
+            {% if course.course_category == 'SM' %}
+
+                <li class="colorparpup font-familyRobotoRegular cours3"><h4 class="">SOUND & MUSIC</h4>
+                  <span id="count{{ course.course_category }}" class="coursecount">
+
+                </span>
+                </li>
+
+            {% endif %}
+
+            {% if course.course_category == 'WD' %}
+
+                <li class="colorOrange font-familyRobotoRegular cours4"><h4 class="">3D MODELING</h4>
+                  <span id="count{{ course.course_category }}" class="coursecount">
+
+                </span>
+                </li>
+
+            {% endif %}
+
+            {% if course.course_category == 'AP' %}
+
+                <li class="colorBlue font-familyRobotoRegular"><h4 class="">ANIMATION PRODUCTION</h4>
+                  <span id="count{{ course.course_category }}" class="coursecount">
+
+                </span>
+
+                </li>
+
+            {% endif %}
+
+            {% if course.course_category == 'VE' %}
+
+                <li class="colorBlue font-familyRobotoRegular"><h4 class="">VIDEO EDITING</h4>
+                  <span id="count{{ course.course_category }}" class="coursecount">
+
+                </span>
+                </li>
+
+            {% endif %}
+
+        {% endif %}
+
+
+    {% endfor %}
+
+
+    </ul>
+    <p class="font-familyRobotoRegular font-size12px mb-4">{{ courseTopic.course_detail }}</p>
+    </div>
+
+{#</ul>#}
+{#<p class="font-familyRobotoRegular font-size12px mb-4">Video-based courses and short courses to help you develop creative and technical skills. What would you like to learn?</p>#}
+{#</div>#}
+
+<div class="col-12 border-top1px font-familyRobotoRegular colorgray overflow-hidden">
+    <div class="card-deck">
+    {% for course in courses %}
+
+        {% if forloop.last %}
+            {% define forloop.counter as count %}
+                <script>
+                    var count = "{{ count }} ";
+                    document.getElementById("count{{ course.course_category }}").innerHTML = count.concat("Courses");
+                </script>
+        {% endif %}
+    {% comment %}<h5>{{ course.course_category }}</h5>{% endcomment %}
+
+        <div class="card mt-5 col-md-4 col-lg-4 col-sm-12 col-xs-12 p-0">
+        {% define course.id|addstr:"/video" as url %}
+  <a href="{{ url }}">
+
+    <img class="card-img-top" src="http://54.197.43.10/media/{{ course.course_thumbnil_Image }} " alt="Course image">
+    <div class="card-body">
+        <h5 class="card-title">{{ course.course_title }}</h5>
+      <p class="card-text paddingBotTitalTxt">{{ course.course_detail }}</p>
+        <div class="col-12 courseTitle">
+       <img src="http://54.197.43.10/media/{{ course.course_author_image }}" class="pull-left" width="70">
+       <p class="card-text m-3 pull-left"><small class="text-muted">{{ course.course_author_name }}<br>29 Aug 2017</small></p>
+      <p class="card-text pull-right mt-5"><small class="text-muted">{{ course.course_duration }}</small></p>
+        </div>
+    </div>
+   </a>
+  </div>
+
+        {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="card-deck">
+    {% endif %}
+
+
+
+
+
+    {% endfor %}
+
+
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<!--END SECTION-->
+
+<!--START FOOTER-->
+<footer class="overflow-hidden">
+<div class="container">
+<div class="col border-top1px mt-5">
+<div class="col-lg-3 col-md-6 col-sm-12 col-12 pl-0 pull-left mt-4">
+<a href="/"><img src="http://54.197.43.10/static/images/logo/logo.png" width="135" class=""></a>
+<p class="pt-2">Lorem Ipsum is simply dummy text of the
+printing and typesetting industry. Lorem
+Ipsum has been the industry's standard
+dummy text.</p>
+<ul class="p-0 socialicon">
+<li class="font-weight-bold">FOLLOW US</li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-youtube-play font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-facebook font-size14px"></span></a></li>
+<li class="transition"><a class="transition" href="#"><span class="fa fa-twitter font-size14px"></span></a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-6 col-12 navFotul pull-left mt-4 height-191px padding0768scr">
+<ul>
+<li><a href="/" class="transition">Browse Courses</a></li>
+<li><a href="/Instructor" class="transition">Instructors</a></li>
+{% comment %}<li><a href="#" class="transition">Enroll</a></li>{% endcomment %}
+<li>
+    {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a href="/logout" class="transition">Sign Out</a>
+            {% else %}
+        	<a href="/logins" class="transition">Sign In</a>
+            {% endif %}</li>
+</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12 navFotul pull-left mt-4 height-191px padding0978scr">
+<ul>
+{% comment %}<li><a href="#" class="transition">Arcade</a></li>
+<li><a href="#" class="transition">Forums</a></li>{% endcomment %}
+<li><a href="/Blogs" class="transition">Blog</a></li>
+<li><a href="/PrivacyPolicy" class="transition">Privacy Policy</a></li>
+{% comment %}<li><a href="#" class="transition">FAQ</a></li>{% endcomment %}
+<li><a href="/ContactUs" class="transition">Contact</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-12 col-12 pull-left mt-4 padding0768scr">
+{% comment %}<p class="m-0 font-weight-bold">Address</p>
+<p class="m-0">Lorem Ipsum is simply dummy text</p>{% endcomment %}
+
+<p class="m-0 font-weight-bold mt-2">Contact</p>
+{% comment %}<p class="m-0">Lorem Ipsum is simply dummy text</p>
+<p class="m-0">Lorem Ipsum is simply dummy text</p>{% endcomment %}
+
+<p class="mt-2 font-weight-bold"><a href="mailto:info@techoryze.com" class="transition txtlink">info@techoryze.com</a></p>
+
+<p class="m-0 font-weight-bold">School &amp; Group Sales</p>
+<p class="mt-2 font-weight-bold"><a href="mailto:sales@techoryze.com" class="transition txtlink">sales@techoryze.com</a></p>
+</div>
+</div>
+
+<div class="col-12 pull-left border-top1px mt-4">
+<p class="text-center mt-3">2018 © Techoryze. All Rights Reserved</p>
+</div>
+
+</div>
+</footer>
+<!--END FOOTER-->
+
+{% comment %}Chat window start{% endcomment %}
+<div class="col p-0">
+            {% if request.user.is_authenticated %}
+                {% define username as user %}
+                <a onclick="dispaychat()" class="d-block chatBtn colorOrange font-weight-bold col-lg-1 col-md-1 col-sm-1 col-1"></a>
+            {% endif %}
+        </div>
+<div id="live-chat" style="visibility: hidden">
+
+		<header class="clearfix">
+
+			<a href="javascript:hideChat()" class="chat-close">x</a>
+
+			<h4>John Powers</h4>
+
+			<span id="counter" class="chat-message-counter">0</span>
+
+		</header>
+
+		<div class="chat" id="chat">
+
+            <div class="chat-history js-chat-log"></div>
+
+			{% comment %}<ul class="js-chat-log"></ul>{% endcomment %}
+
+			<div style="padding: 16px">
+
+				<fieldset>
+
+					<input class="js-text" type="text" placeholder="Type your message…" autofocus>
+					<input type="hidden">
+
+				</fieldset>
+            </div>
+
+		</div> <!-- end chat -->
+
+	</div> <!-- end live-chat -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="http://54.197.43.10/static/js/chatscript.js"></script>
+<script src="http://54.197.43.10/static/js/slim.min.js"></script>
+<script src="http://54.197.43.10/static/js/popper.min.js"></script>
+<script src="http://54.197.43.10/static/js/bootstrap.js"></script>
+<script src="http://54.197.43.10/static/js/js.cookie.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    var counter = 0;
+    var me = {};
+me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
+
+var you = {};
+you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
+
+ {% define username as user %}
+    {% if user == '' %}
+        {% define 'admin' as user %}
+    {% endif %}
+
+    //working code
+    var chatterbotUrl = '{% url "chatterbot:chatterbot" %}';
+      var csrftoken = Cookies.get('csrftoken');
+
+      function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+
+      $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          }
+        }
+      });
+
+      var $chatlog = $('.js-chat-log');
+      var $input = $('.js-text');
+      var $sayButton = $('.js-say');
+
+      function createRow(text, who) {
+          var date = formatAMPM(new Date())
+          if(who == "me"){
+              //var $row = $('<li class="list-group-item"></li>');
+              $row = $('<div class="chat-message clearfix">\
+                 <img src="http://54.197.43.10/static/images/icon/user_icon.png" alt="" width="32" height="32">\
+                  <div class="chat-message-content clearfix">\
+                  <h5>{{ user }}</h5>\
+                  <p id="text1">'+text+'</p>\
+                  </div>\
+                  </div>\
+                  <hr>');
+          }
+          else {
+               $row = $('<div class="chat-message clearfix">\
+                  <img src="http://54.197.43.10/static/images/icon/usermalecircle.png" alt="" width="32" height="32">\
+                  <div class="chat-message-content clearfix">\
+                  <h5>John Powers</h5>\
+                  <p id="text1">'+text+'</p>\
+                  </div>\
+                  </div>\
+                  <hr>');
+          }
+          //$row.text(text);
+          //alert(text);
+          //document.getElementById("text1").innerHTML=text;
+          $chatlog.append($row);
+          counter++;
+          document.getElementById("counter").innerHTML = counter;
+      }
+
+      function submitInput() {
+        var inputData = {
+          'text': $input.val()
+        }
+
+        // Display the user's input on the web page
+
+
+        createRow(inputData.text, 'me');
+
+        var $submit = $.ajax({
+          type: 'POST',
+          url: chatterbotUrl,
+          data: JSON.stringify(inputData),
+          contentType: 'application/json'
+        });
+
+        $submit.done(function(statement) {
+            var result = statement.text;
+            createRow(result, 'you');
+
+            // Clear the input field
+            $input.val('');
+
+            // Scroll to the bottom of the chat interface
+            $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+        });
+
+        $submit.fail(function() {
+          // TODO: Handle errors
+        });
+      }
+
+      $sayButton.click(function() {
+        submitInput();
+      });
+
+      $input.keydown(function(event) {
+        // Submit the input when the enter button is pressed
+        if (event.keyCode == 13) {
+          submitInput();
+        }
+      });
+
+
+      function formatAMPM(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+}
+
+function dispaychat() {
+    document.getElementById("live-chat").style.visibility = "visible";
+    document.getElementById("chat").style.display = "block";
+    document.getElementById("counter").style.display = "none";
+
+}
+
+function hideChat() {
+    document.getElementById("live-chat").style.visibility = "hidden";
+}
+</script>
+
+</body>
+</html>

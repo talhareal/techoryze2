@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HTML Video and Audio</title>
+      <link rel="stylesheet" href="css/normalize.css">
+      <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+      <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
+  </head>
+  <body>
+      <h1>HTML Video and Audio</h1>
+
+      <h2>Video Example</h2>
+      
+<!--      
+<embed src="https://www.w3schools.com/tags/movie.mp4" height="250" width="250"/>
+
+<object data="https://www.w3schools.com/tags/movie.mp4" height="250" width="250"/> 
+
+    <div class="wrapper">
+    <video preload="yes" autoplay loop width="100%" height="auto" poster="http://cdn.foo.com/bar.png">
+            <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+</video>
+        <video id="video" controls class="col p-0"  poster="http://54.197.43.10/static/images/bg/poster.png" preload="auto">
+            <source src="http://54.197.43.10/media/video/mov_bbb.mp4" type="video/mp4">
+        </video> 
+        
+
+-->
+        
+        <video id="example_video_1" class="video-js vjs-default-skin"
+  controls preload="auto" width="640" height="264"
+  poster="http://video-js.zencoder.com/oceans-clip.png"
+  data-setup='{"example_option":true}'>
+<source src="http://54.197.43.10/media/video/mov_bbb.mp4" type="video/mp4"> <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+    </div>
+  </body>
+</html>

@@ -37,7 +37,7 @@ Flask==0.12.2
 functools32==3.2.3.post2
 future==0.16.0
 gunicorn==19.7.1
-html5lib==0.9999999
+html5lib==0.999999999
 idna==2.6
 ipaddress==1.0.18
 itsdangerous==0.24
